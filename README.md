@@ -3,7 +3,7 @@ WhatsApp Web App for iPad with dark mode
 
 ## Features
 * Dark Mode - mostly, not fully adjusted -
-* Split View Support - mobile like experience -
+* Slide Over Support - mobile like experience -
 * Single-tap opens chat - normally, website requires two taps -
 
 ## Screenshots
