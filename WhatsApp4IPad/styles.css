@@ -1,0 +1,386 @@
+#startup {
+    background-color: rgba(0,0,0,0.85);
+}
+:root {
+      --beige: #e5ddd5;
+       --black: #000;
+       --blue: #039BE5;
+       --blue-light: #00A5F4;
+       --blue-ocean: #AADAFF;
+       --blue-sky: #9DE1FE;
+       --dark: #263238;
+       --gray-30: #f7f7f7;
+
+       --gray-60: #f0f0f0;
+
+       --gray-70: #ededed;
+
+       --gray-100: #e6e6e6;
+
+       --gray-150: #d9d9d9;
+
+       --gray-200: #ccc;
+
+       --gray-300: #b3b3b3;
+
+       --gray-400: #999;
+
+       --gray-500: gray;
+
+       --gray-600: #666;
+
+       --gray-700: #4a4a4a;
+
+       --gray-800: #303030;
+
+       --gray-850: #262626;
+
+       --gray-900: #1a1a1a;
+
+       --green: #07BC4C;
+      
+       --green-deep: #1B9A59;
+      
+       --orange: #FFAD20;
+      
+       --pale-blue-green: #ECFAF5;
+      
+       --pale-green: #DCF8C6;
+      
+       --pale-yellow: #FFF5C4;
+      
+       --red: #D70000;
+      
+       --red-light: #F44336;
+      
+       --teal: #009688;
+      
+       --teal-light: #1DE9B6;
+      
+       --teal-lighter: #00BFA5;
+      
+       --white: #fff;
+      
+       --yellow: #FED859;
+      
+       --active-tab-marker: #009688;
+      
+       --app-background-stripe: #009688;
+      
+       --audio-progress-incoming: #31c76a;
+      
+       --audio-progress-outgoing: #889a7b;
+      
+       --audio-progress-played-incoming: #30b6f6;
+      
+       --audio-progress-played-outgoing: #2ab5eb;
+      
+       --audio-track-incoming: #e6e6e6;
+      
+       --audio-track-outgoing: #c6dfb2;
+      
+       --avatar-background: #e6e6e6;
+      
+       --avatar-border: #fff;
+      
+       --avatar-placeholder-background: #DFE5E7;
+      
+       --avatar-placeholder-primary: #fff;
+      
+       --background-app: #000000;
+      
+       --background-default: #000000;
+      
+       --background-default-active: #0a0a0a;
+      
+       --background-default-hover: #050505;
+      
+       --border-bubble: rgba(0,0,0,0.06);
+      
+       --border-list: #121212;
+      
+       --border-default: #0f0f0f;
+      
+       --border-panel: #232D34;
+      
+       --border-strong: #232D34;
+      
+       --border-stronger: #232D34;
+      
+       --butterbar-background-battery: #fa685e;
+      
+       --butterbar-background-connection: #FED859;
+      
+       --butterbar-background-default: #9DE1FE;
+      
+       --butterbar-background-update: #1DE9B6;
+      
+       --butterbar-primary: rgba(48,48,48,0.96);
+      
+       --butterbar-secondary: rgba(48,48,48,0.85);
+      
+       --button-alternative: #00A5F4;
+      
+       --button-alternative-background: #fff;
+      
+       --button-background-disabled: #e6e6e6;
+      
+       --button-bubble: rgba(0,150,136,0.7);
+      
+       --media-viewer-button-background: #2C383E;
+      
+       --media-viewer-button-icon: #fff;
+      
+       --button-primary: #fff;
+      
+       --button-primary-background: #05cd51;
+      
+       --button-primary-background-hover: #06d253;
+      
+       --button-round-background: #09e85e;
+      
+       --button-secondary: #07BC4C;
+      
+       --button-secondary-background: #fff;
+      
+       --button-secondary-hover: #05cd51;
+      
+       --chat-marker: #999;
+      
+       --chat-marker-admin: #07BC4C;
+      
+       --chat-marker-admin-border: rgba(7,188,76,0.7);
+      
+       --chat-marker-border: rgba(153,153,153,0.7);
+      
+       --compose-background: #2C383E;
+      
+       --compose-panel-background: rgba(255,255,255,0.6);
+      
+       --conversation-panel-background: #07181F !important;
+      
+       --conversation-panel-border: rgba(48,48,48,0.03) !important;
+      
+       --danger: #df3333;
+      
+       --dropdown-background: #2C383E;
+       
+       --empty-state-icon: #fff;
+       
+       --focus: rgba(0,165,244,0.4);
+       
+       --highlight: #009688;
+       
+       --icon: #919191;
+       
+       --icon-ack: #4FC3F7;
+       
+       --icon-disabled: #c9c9c9;
+       
+       --icon-fixed: #919191;
+       
+       --icon-lighter: rgba(255,255,255,0.3);
+       
+       --icon-search-back: #33b7f6;
+       
+       --icon-strong: #eee;
+       
+       --incoming-background: #212E35;
+       
+       --incoming-background-rgb: 33, 46, 53;
+       
+       --incoming-background-deeper: #202020;
+       
+       --incoming-primary: #989898;
+       
+       --input-border-active: #00BFA5;
+       
+       --input-placeholder: #999;
+       
+       --intro-background: #030405;
+       
+       --inverse: #fff;
+       
+       --link: #039BE5;
+       
+       --live-location-footer-background: rgba(255,255,255,0.9);
+       
+       --live-location-glow: rgba(37,211,102,0.3);
+       
+       --live-location-glow-stale: rgba(255,0,31,0.3);
+       
+       --location-cluster-background: #fff;
+       
+       --media-editor-control: #1c313f;
+       
+       --media-viewer-background: #000000;
+       --media-viewer-background-rgb: 0, 0, 0;
+
+       --menu-tabs-list-active: #6cea91;
+    
+       --message-background-deep: rgba(0,0,0,0.12);
+    
+       --message-placeholder-icon: rgba(48,48,48,0.3);
+    
+       --modal-backdrop: rgba(0,0,0,0.85);
+    
+       --modal-backdrop-solid: #303030;
+       --modal-background: #000;
+       --notification-biz-background: rgba(236,250,245,0.95);
+       --notification-e2e-background: rgba(255,245,196,0.95);
+       --outgoing-background: #034640;
+       --outgoing-background-rgb: 3,70,64;
+
+       --outgoing-background-deeper: #034640;
+       
+       --overlay: #000;
+       
+       --panel-background: #232D35;
+       
+       --panel-background-active: #dadada;
+       
+       --panel-background-colored: #00BFA5;
+       
+       --panel-background-colored-deeper: #009688;
+       
+       --panel-background-deep: #d9d9d9;
+       
+       --panel-background-deeper: #e6e6e6;
+       
+       --panel-background-hover: #e4e4e4;
+       
+       --panel-background-lighter: #232D35;
+       
+       --panel-primary: rgba(0,0,0,0.35);
+       
+       --payment-amount: #008c7f;
+       
+       --payment-status-failed: #F44336;
+       
+       --payment-status-processing: rgba(0,0,0,0.45);
+       
+       --payment-status-success: #07BC4C;
+       
+       --payment-status-waiting: rgba(0,0,0,0.45);
+       
+       --photopicker-overlay-background: rgba(102,102,102,0.8);
+       
+       --primary: #fff;
+       
+       --primary-strong: #fff;
+       
+       --primary-stronger: #cfcfcf;
+       
+       --primary-title: #525252;
+       
+       --product-thumb-background: #ededed;
+       
+       --ptt-blue: #4FC3F7;
+       
+       --ptt-button-cancel: rgba(229,57,53,0.8);
+       
+       --ptt-button-send: rgba(9,210,97,0.8);
+       
+       --ptt-green: #09D261;
+       
+       --rich-text-panel-background: #0f0f0f;
+       
+       --secondary: rgba(255,255,255,0.6);
+       
+       --secondary-light: rgba(255,255,255,0.25);
+       
+       --secondary-lighter: rgba(255,255,255,0.45);
+       
+       --secondary-stronger: rgba(255,255,255,0.8);
+       
+       --shadow: #000;
+       
+       --shadow-light: rgba(0,0,0,0.08);
+       
+       --spinner-incoming: #b3b3b3;
+       
+       --spinner-outgoing: #9aae8b;
+       
+       --status-background: #000;
+       
+       --status-background-hover: #262626;
+       
+       --status-primary: #fff;
+       
+       --status-secondary: rgba(255,255,255,0.55);
+       
+       --status-secondary-stronger: #b3b3b3;
+       
+       --success: #07BC4C;
+       
+       --suspicious-background: rgba(244,67,54,0.8);
+       
+       --teal-hover: #00ab97;
+       
+       --teal-pale: #5fb9b0;
+       
+       --thumb-border-active: #fff;
+       
+       --tooltip-background: rgba(89,89,89,0.85);
+       
+       --unread-background: #fff;
+       
+       --unread-bar-background: rgba(255,255,255,0.25);
+       
+       --unread-marker-background: #06d755;
+       
+       --unread-marker-text: #000;
+       
+       --video-player-background: #000;
+       
+       --video-primary: #fff;
+       
+       --voip-accept-background: #39d575;
+       
+       --voip-background: #262626;
+       
+       --voip-background-deep: #000;
+       
+       --voip-primary: #fff;
+       
+       --voip-reject-background: #e54b40;
+       
+       --win32-title-primary: #fff;
+       
+       --system-message-background: rgba(0,0,0,0.92);
+       
+       --system-message-text: rgba(255,255,255,0.88);
+       
+       --notification-text: rgba(255,255,255,0.96);
+    
+   }
+
+html[dir=ltr] .message-in .tail-container {
+ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAYAAADeB1slAAACFmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZkVYPSJodHRwOi8vY2lwYS5qcC9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOmF1eD0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC9hdXgvIgogICBleGlmRVg6R2FtbWE9IjExLzUiCiAgIGV4aWZFWDpMZW5zTW9kZWw9IiIKICAgdGlmZjpJbWFnZUxlbmd0aD0iMzgiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMjQiCiAgIGF1eDpMZW5zPSIiLz4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz67hIA3AAABg2lDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kbtLA0EQh79EJeIrQiwsLIKohajECKKNYIKoIBJiBF9NcnkJSTzuEiTYCrYBBdHGV6F/gbaCtSAoiiBWFtaKNirnXC6QIGaW2fn2tzvD7izYQyklrdd6IJ3JasFJn3thccnteKEWFy146Q0rujoeCMxQ1T7vsZnxtt+sVf3cv9YYjekK2OqFxxRVywpPCc+sZ1WTd4TblGQ4Knwm3KfJBYXvTD1i8avJCYu/TdZCQT/YW4XdiQqOVLCS1NLC8nK60qmcUrqP+ZKmWGZ+TmKneAc6QSbx4WaaCfwMM8iozMP0S38GZEWVfE8xf5Y1yVVkVsmjsUqCJFn6RM1J9ZjEuOgxGSnyZv//9lWPD3mt6k0+qHs2jPducGzDT8Ewvo4M4+cYap7gMlPOXzuEkQ/RC2Wt6wCcm3B+VdYiu3CxBe2PalgLF6UacXs8Dm+n0LwIrhtoWLZ6Vtrn5AFCG/JV17C3Dz1y3rnyC48PZ/gjfBjaAAAACXBIWXMAAAsTAAALEwEAmpwYAAABiElEQVRIie2WzUoCURiGn8kg+kEIokCSEKKVRGR/FuEiaCcE7Vy1C6SwJAWh++gSuoRuoIU6o9mM5SJqaGOZIQaBbtQWNtImPKOdTfgsh+/MM+d9F/MpCBAOhyeurtMnwB7gEzljoXQb8CyuKMAFcGjnxRZDAjPjtL+8J0QEDeBFmsDUtdrBfvCyV4FDZOi58lkAtgG3XYFIRJi6VpkZGz4FylIEgJJMJtO7fl8CaNoRCEVkSTKZjHEei06pt/lVGQKA5sNrJY2NPkQj6mDq2vv0qOMYKEkRAKRSqczO2lIcgT7sRmShZLPZ/HksOqne5tdlCABa3334gbnfhnqKyMLUtcrUiBIBilIEgKKqai6w7I3xSx/9RNSR5HK5u0Q04tSMe78MAUDr8a2qAmuAR4aAaqlYn5xx3QBBwGk977eDnyimrul+78IZ7X8I8Ic3sDAMoxCPHI1l84UtKQKg9VT+0IANYFaGgGqpWJ93u/Rag82uW0UfDIVCoYBUAQJr0YABAwb8C74ANRZznaeeYPwAAAAASUVORK5CYII=
+)
+}
+html[dir=ltr] .message-out .tail-container {
+background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAYAAADeB1slAAACFmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4KPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iWE1QIENvcmUgNS41LjAiPgogPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4KICA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIgogICAgeG1sbnM6ZXhpZkVYPSJodHRwOi8vY2lwYS5qcC9leGlmLzEuMC8iCiAgICB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIKICAgIHhtbG5zOmF1eD0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC9hdXgvIgogICBleGlmRVg6R2FtbWE9IjExLzUiCiAgIGV4aWZFWDpMZW5zTW9kZWw9IiIKICAgdGlmZjpJbWFnZUxlbmd0aD0iMzgiCiAgIHRpZmY6SW1hZ2VXaWR0aD0iMjQiCiAgIGF1eDpMZW5zPSIiLz4KIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+Cjw/eHBhY2tldCBlbmQ9InIiPz67hIA3AAABg2lDQ1BzUkdCIElFQzYxOTY2LTIuMQAAKJF1kbtLA0EQh79EJeIrQiwsLIKohajECKKNYIKoIBJiBF9NcnkJSTzuEiTYCrYBBdHGV6F/gbaCtSAoiiBWFtaKNirnXC6QIGaW2fn2tzvD7izYQyklrdd6IJ3JasFJn3thccnteKEWFy146Q0rujoeCMxQ1T7vsZnxtt+sVf3cv9YYjekK2OqFxxRVywpPCc+sZ1WTd4TblGQ4Knwm3KfJBYXvTD1i8avJCYu/TdZCQT/YW4XdiQqOVLCS1NLC8nK60qmcUrqP+ZKmWGZ+TmKneAc6QSbx4WaaCfwMM8iozMP0S38GZEWVfE8xf5Y1yVVkVsmjsUqCJFn6RM1J9ZjEuOgxGSnyZv//9lWPD3mt6k0+qHs2jPducGzDT8Ewvo4M4+cYap7gMlPOXzuEkQ/RC2Wt6wCcm3B+VdYiu3CxBe2PalgLF6UacXs8Dm+n0LwIrhtoWLZ6Vtrn5AFCG/JV17C3Dz1y3rnyC48PZ/gjfBjaAAAACXBIWXMAAAsTAAALEwEAmpwYAAABYElEQVRIiWNkdnP4z0ACSJJXZfjA+oF39bTVX4hRz0SK4QwMDAzzHt5m4P/F/5mBgYGRJhYwMDAwzH90h4GBgYGbZhZAwV+aWZBvrVrOwMDwnSYWNNm7MszpXTmHWPUkW7Bq3VLzT58+vaOJBeFyQikXz147xUBkCiLJggo3/WnL5qxbBDWc6LxDlAXNDm4MExvm1jMwMPwmxXCiLVi+cbnJly9f3pBiMNEWBMvxxV8+efksOYYTtKDCWW/SqjmbljKQEKlEW1Bn7cgwuXVBIwMkx5IU7kRZsHLLSkNS0jtJFviLc0ZfO33tAgMFQYPTghJHnb51i7evYCAxvRNlQZW5LcOMjsUtDAwM/6hhOIYF67es1P/48eN7ahiMYYG/CGfElfO3LjFQIdxRALObw//SlqxOBsoqH9ygrq7uPz8/vwBNDGdgYGDQNNE0pJnhUECboKGH4aNgFIyCUTBiAAD4SmG+qZTofwAAAABJRU5ErkJggg==
+)
+}
+body {
+    color: #fff
+}
+html[dir] ._3pkkz {
+
+    padding-bottom: 16px;
+}
+.overlay > div{
+  min-width: 0px;
+}
+#app > div > div{
+    min-width: 0px;
+}
+ /*
+  *:hover {
+      pointer-events: none !important;
+  }
+  @media (hover: none) {
+      *:hover { color: inherit; }
+  }
+  */

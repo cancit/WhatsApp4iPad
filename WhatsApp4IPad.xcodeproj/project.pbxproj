@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		AB668C2B244B781600FF325D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB668C2A244B781600FF325D /* AppDelegate.swift */; };
 		AB668C2D244B781600FF325D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB668C2C244B781600FF325D /* SceneDelegate.swift */; };
-		AB668C2F244B781600FF325D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB668C2E244B781600FF325D /* ContentView.swift */; };
 		AB668C31244B781800FF325D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB668C30244B781800FF325D /* Assets.xcassets */; };
 		AB668C34244B781800FF325D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB668C33244B781800FF325D /* Preview Assets.xcassets */; };
 		AB668C37244B781800FF325D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB668C35244B781800FF325D /* LaunchScreen.storyboard */; };
+		AB668C3F244B796200FF325D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB668C3E244B796200FF325D /* ViewController.swift */; };
+		AB668C41244B88CC00FF325D /* styles.css in Resources */ = {isa = PBXBuildFile; fileRef = AB668C40244B88CC00FF325D /* styles.css */; };
+		AB9A302124521B5C0006386A /* WKController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB9A302024521B5C0006386A /* WKController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AB668C27244B781600FF325D /* WhatsApp4IPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsApp4IPad.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB668C27244B781600FF325D /* WhatsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WhatsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB668C2A244B781600FF325D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB668C2C244B781600FF325D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AB668C2E244B781600FF325D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AB668C30244B781800FF325D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AB668C33244B781800FF325D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB668C36244B781800FF325D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AB668C38244B781800FF325D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AB668C3E244B796200FF325D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AB668C40244B88CC00FF325D /* styles.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = styles.css; sourceTree = "<group>"; };
+		AB9A302024521B5C0006386A /* WKController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WKController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +52,7 @@
 		AB668C28244B781600FF325D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB668C27244B781600FF325D /* WhatsApp4IPad.app */,
+				AB668C27244B781600FF325D /* WhatsApp.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,11 +62,13 @@
 			children = (
 				AB668C2A244B781600FF325D /* AppDelegate.swift */,
 				AB668C2C244B781600FF325D /* SceneDelegate.swift */,
-				AB668C2E244B781600FF325D /* ContentView.swift */,
+				AB668C40244B88CC00FF325D /* styles.css */,
 				AB668C30244B781800FF325D /* Assets.xcassets */,
 				AB668C35244B781800FF325D /* LaunchScreen.storyboard */,
 				AB668C38244B781800FF325D /* Info.plist */,
 				AB668C32244B781800FF325D /* Preview Content */,
+				AB668C3E244B796200FF325D /* ViewController.swift */,
+				AB9A302024521B5C0006386A /* WKController.swift */,
 			);
 			path = WhatsApp4IPad;
 			sourceTree = "<group>";
@@ -92,7 +98,7 @@
 			);
 			name = WhatsApp4IPad;
 			productName = WhatsApp4IPad;
-			productReference = AB668C27244B781600FF325D /* WhatsApp4IPad.app */;
+			productReference = AB668C27244B781600FF325D /* WhatsApp.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -134,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB668C37244B781800FF325D /* LaunchScreen.storyboard in Resources */,
+				AB668C41244B88CC00FF325D /* styles.css in Resources */,
 				AB668C34244B781800FF325D /* Preview Assets.xcassets in Resources */,
 				AB668C31244B781800FF325D /* Assets.xcassets in Resources */,
 			);
@@ -148,7 +155,8 @@
 			files = (
 				AB668C2B244B781600FF325D /* AppDelegate.swift in Sources */,
 				AB668C2D244B781600FF325D /* SceneDelegate.swift in Sources */,
-				AB668C2F244B781600FF325D /* ContentView.swift in Sources */,
+				AB668C3F244B796200FF325D /* ViewController.swift in Sources */,
+				AB9A302124521B5C0006386A /* WKController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,7 +294,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatsApp4IPad/Preview Content\"";
-				DEVELOPMENT_TEAM = 94LUT6L3Q4;
+				DEVELOPMENT_TEAM = LUBGWANK4N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WhatsApp4IPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -294,7 +302,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cancit.WhatsApp4IPad;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,7 +314,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"WhatsApp4IPad/Preview Content\"";
-				DEVELOPMENT_TEAM = 94LUT6L3Q4;
+				DEVELOPMENT_TEAM = LUBGWANK4N;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = WhatsApp4IPad/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -314,7 +322,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = cancit.WhatsApp4IPad;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = WhatsApp;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
