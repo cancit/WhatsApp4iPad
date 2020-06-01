@@ -66,7 +66,30 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         """
         webView.evaluateJavaScript(jsString, completionHandler: nil)
         print("fixDoubleClickIssue")
+        self.checkHeaderLoaded(webView)
         self.setView(state: self.state)
+    }
+    func bindNewChatButton(_ webView: WKWebView){
+        let jsString = """
+        document.querySelectorAll(\"#side > header > div._20NlL > div > span > div:nth-child(2)\")[0].addEventListener(\"click\",(e)=>{
+          webkit.messageHandlers.state.postMessage(\"action:newChatOpen\");
+        })
+        """
+        webView.evaluateJavaScript(jsString, completionHandler: nil)
+        print("bindNewChatButton")
+    }
+    func checkChatOpen(_ webView: WKWebView){
+                let jsString2 = """
+                       document.querySelectorAll(\"#app > div > div > div.YD4Yw > div._1-iDe._1xXdX > span > div > span > div > div._1vDUw._2sNbV > div:nth-child(2) > div > div >div \").forEach((d)=>{
+                         d.addEventListener(\"click\",(e)=>{
+                           e.target.dispatchEvent(new MouseEvent(\"mousedown\", e));
+                           webkit.messageHandlers.state.postMessage(\"view:detail\");
+                          })
+                       })
+                       """
+                 webView.evaluateJavaScript(jsString2, completionHandler: nil)
+        print("checkChatOpen")
+
     }
     func addUserMediaListener(_ webView: WKWebView){
         // For experimental microphone support
@@ -94,6 +117,20 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         }
         print("checkChatsLoaded")
     }
+    func checkHeaderLoaded(_ webView: WKWebView) {
+        let jsString = "document.querySelectorAll(\"#side > header > div._20NlL > div > span > div:nth-child(2)\").length"
+        webView.evaluateJavaScript(jsString) { (result, error) in
+            let i = result as! Int
+            if(i > 0) {
+                 self.bindNewChatButton(webView)
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    self.checkHeaderLoaded(webView)
+                }
+            }
+        }
+        print("checkHeaderLoaded")
+    }
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.wkView = webView
@@ -114,6 +151,9 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
                 } else if(body == "view:master") {
                     self.setView(state: Views.Master)
                 }
+            }
+            if(body == "action:newChatOpen"){
+                self.checkChatOpen(self.wkView!)
             }
         default:
             print(message.name)
