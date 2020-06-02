@@ -67,9 +67,28 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         webView.evaluateJavaScript(jsString, completionHandler: nil)
         print("fixDoubleClickIssue")
         self.checkHeaderLoaded(webView)
+        self.checkEmptyScreen(webView)
         self.setView(state: self.state)
     }
-    func bindNewChatButton(_ webView: WKWebView){
+    func checkEmptyScreen(_ webView: WKWebView) {
+        // only run in detail
+        if(self.state == Views.Detail) {
+            let jsString = """
+            (function() {
+            const isConnectedScreenVisible = !!document.querySelector(\"#app > div > div > div._1-iDe.Wu52Z > div > div._2IVU3\")
+            if(isConnectedScreenVisible){
+                webkit.messageHandlers.state.postMessage(\"view:master\");
+            }
+            })();
+            """
+            webView.evaluateJavaScript(jsString, completionHandler: nil)
+            print("checkEmptyScreen")
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.checkEmptyScreen(webView)
+        }
+    }
+    func bindNewChatButton(_ webView: WKWebView) {
         let jsString = """
         document.querySelectorAll(\"#side > header > div._20NlL > div > span > div:nth-child(2)\")[0].addEventListener(\"click\",(e)=>{
           webkit.messageHandlers.state.postMessage(\"action:newChatOpen\");
@@ -78,8 +97,8 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         webView.evaluateJavaScript(jsString, completionHandler: nil)
         print("bindNewChatButton")
     }
-    func checkChatOpen(_ webView: WKWebView){
-                let jsString2 = """
+    func checkChatOpen(_ webView: WKWebView) {
+        let jsString2 = """
                        document.querySelectorAll(\"#app > div > div > div.YD4Yw > div._1-iDe._1xXdX > span > div > span > div > div._1vDUw._2sNbV > div:nth-child(2) > div > div >div \").forEach((d)=>{
                          d.addEventListener(\"click\",(e)=>{
                            e.target.dispatchEvent(new MouseEvent(\"mousedown\", e));
@@ -87,13 +106,13 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
                           })
                        })
                        """
-                 webView.evaluateJavaScript(jsString2, completionHandler: nil)
+        webView.evaluateJavaScript(jsString2, completionHandler: nil)
         print("checkChatOpen")
 
     }
-    func addUserMediaListener(_ webView: WKWebView){
+    func addUserMediaListener(_ webView: WKWebView) {
         // For experimental microphone support
-          let jsString = """
+        let jsString = """
         (function() {
           if (!window.navigator) window.navigator = {mediaDevices:{}};
           window.navigator.mediaDevices.getUserMedia = function() {
@@ -122,7 +141,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         webView.evaluateJavaScript(jsString) { (result, error) in
             let i = result as! Int
             if(i > 0) {
-                 self.bindNewChatButton(webView)
+                self.bindNewChatButton(webView)
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.checkHeaderLoaded(webView)
@@ -134,7 +153,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
 
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.wkView = webView
-     //   addUserMediaListener(webView)
+        //   addUserMediaListener(webView)
         insertContentsOfCSSFile(into: webView) // 2
         checkChatsLoaded(webView)
     }
@@ -152,7 +171,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
                     self.setView(state: Views.Master)
                 }
             }
-            if(body == "action:newChatOpen"){
+            if(body == "action:newChatOpen") {
                 self.checkChatOpen(self.wkView!)
             }
         default:
@@ -162,16 +181,16 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
 
     }
 
-    func webView(_ webView: WKWebView, shouldStartLoadWith request: URLRequest, navigationType:Any) -> Bool {
-          if request.url?.scheme == "logger" {
-              guard let data = request.url?.query?.removingPercentEncoding?.data(using: .utf8) else { return true }
-              guard let obj = try? JSONSerialization.jsonObject(with: data, options: []) else { return true }
-              guard let jsonData = try? JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted) else { return true }
-              guard let json = String(data: jsonData, encoding: .utf8) else { return true }
-              print(json)
-          }
-          return true
-      }
+    func webView(_ webView: WKWebView, shouldStartLoadWith request: URLRequest, navigationType: Any) -> Bool {
+        if request.url?.scheme == "logger" {
+            guard let data = request.url?.query?.removingPercentEncoding?.data(using: .utf8) else { return true }
+            guard let obj = try? JSONSerialization.jsonObject(with: data, options: []) else { return true }
+            guard let jsonData = try? JSONSerialization.data(withJSONObject: obj, options: .prettyPrinted) else { return true }
+            guard let json = String(data: jsonData, encoding: .utf8) else { return true }
+            print(json)
+        }
+        return true
+    }
     func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
         if navigationAction.navigationType == .linkActivated {
             if let url = navigationAction.request.url,
