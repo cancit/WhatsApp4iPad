@@ -235,6 +235,8 @@
        
        --overlay: #000;
        
+       --panel-header-background: #232D35;
+       
        --panel-background: #232D35;
        
        --panel-background-active: #dadada;
@@ -352,6 +354,12 @@
        --system-message-text: rgba(255,255,255,0.88);
        
        --notification-text: rgba(255,255,255,0.96);
+       
+       --bubble-meta: #aaa;
+       
+       --chatlist-icon: #aaa;
+       
+       --bubble-meta-icon: #aaa;
     
    }
 
@@ -366,7 +374,7 @@ background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAmCAYA
 body {
     color: #fff
 }
-html[dir] ._3pkkz {
+html[dir] ._3ee1T {
 
     padding-bottom: 16px;
 }
