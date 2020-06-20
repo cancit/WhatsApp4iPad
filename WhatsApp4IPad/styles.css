@@ -361,6 +361,14 @@
        
        --bubble-meta-icon: #aaa;
     
+       --message-primary:#eee;
+       
+       --drawer-section-background: #000;
+       
+       --panel-header-background: #232D35;
+       
+       --drawer-background: #000;
+
    }
 
 html[dir=ltr] .message-in .tail-container {
@@ -388,6 +396,20 @@ html[dir] ._3ee1T {
     position: absolute;
     left: 0px;
     right: 0px;
+}
+
+#app > div > div > div.YD4Yw > div._1-iDe._1xXdX {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+}
+
+/* group detail */
+#app > div > div > div.YD4Yw > div._1-iDe._14VS3 {
+    position: absolute;
+    left: 0px;
+    right: 0px;
+    width: 100%;
 }
  /*
   *:hover {
