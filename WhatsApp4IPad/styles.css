@@ -369,6 +369,7 @@
        
        --drawer-background: #000;
 
+       --startup-background: #000;
    }
 
 html[dir=ltr] .message-in .tail-container {
