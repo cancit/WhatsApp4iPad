@@ -90,7 +90,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
     }
     func bindNewChatButton(_ webView: WKWebView) {
         let jsString = """
-        document.querySelectorAll(\"#side > header > div._3euVJ > div > span > div:nth-child(2)\")[0].addEventListener(\"click\",(e)=>{
+        document.querySelectorAll(\"#side > header > div._1eNef > div > span > div:nth-child(2)\")[0].addEventListener(\"click\",(e)=>{
           webkit.messageHandlers.state.postMessage(\"action:newChatOpen\");
         })
         """
@@ -99,7 +99,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
     }
     func checkChatOpen(_ webView: WKWebView) {
         let jsString2 = """
-                       document.querySelectorAll(\"#app > div > div > div.YD4Yw > div._1-iDe._1xXdX > span > div > span > div > div._1qDvT._2wPpw > div:nth-child(2) > div > div > div \").forEach((d)=>{
+                       document.querySelectorAll(\"#app > div > div > div._3Bog7 > div.i5ly3._2NwAr > span > div > span > div > div._3Xjbn._1RHZR > div:nth-child(2) > div > div \").forEach((d)=>{
                          d.addEventListener(\"click\",(e)=>{
                            e.target.dispatchEvent(new MouseEvent(\"mousedown\", e));
                            webkit.messageHandlers.state.postMessage(\"view:detail\");
@@ -137,7 +137,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         print("checkChatsLoaded")
     }
     func checkHeaderLoaded(_ webView: WKWebView) {
-        let jsString = "document.querySelectorAll(\"#side > header > div._3euVJ > div > span > div:nth-child(2)\").length"
+        let jsString = "document.querySelectorAll(\"#side > header > div._1eNef > div > span > div:nth-child(2)\").length"
         webView.evaluateJavaScript(jsString) { (result, error) in
             let i = result as! Int
             if(i > 0) {
@@ -172,6 +172,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
                 }
             }
             if(body == "action:newChatOpen") {
+                print("action:newChatOpen")
                 self.checkChatOpen(self.wkView!)
             }
         default:
