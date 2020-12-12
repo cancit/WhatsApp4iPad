@@ -52,14 +52,19 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         document.querySelectorAll(\"#pane-side\").forEach((d)=>{
             d.addEventListener(\"touchstart\",(e)=>{
              click=true
+             clickTime = Date.now()
             })
             d.addEventListener(\"touchmove\",(e)=>{
-            click=false
+             click=false
+             clickTime = undefined
            })
           d.addEventListener(\"touchend\",(e)=>{
-            if(click){
-            e.target.dispatchEvent(new MouseEvent(\"mousedown\", e));
-            webkit.messageHandlers.state.postMessage(\"view:detail\");
+            if(click && (Date.now() - clickTime) < 500){
+                e.target.dispatchEvent(new MouseEvent(\"mousedown\", e));
+                webkit.messageHandlers.state.postMessage(\"view:detail\");
+            }else if(click){
+                click=false
+                clickTime = undefined
             }
            })
         })
@@ -110,6 +115,32 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         print("checkChatOpen")
 
     }
+    func checkArchivedChatOpen(_ webView: WKWebView) {
+        let jsString2 = """
+                       document.querySelectorAll("#app > div > div > div._3Bog7 > div.i5ly3._2NwAr > span > div > span > div > div > div:nth-child(1)").forEach((d)=>{
+                            d.addEventListener("touchstart",(e)=>{
+                              arcClick=true
+                            })
+                            d.addEventListener("touchmove",(e)=>{
+                              arcClick=false
+                            })
+                            d.addEventListener("touchend",(e)=>{
+                              if(arcClick){
+                               // e.target.dispatchEvent(new MouseEvent("click", e));
+                                setTimeout(() => {
+                                    webkit.messageHandlers.state.postMessage("view:detail");
+                                }, 500);
+                              }
+                           })
+                       })
+                       """
+        webView.evaluateJavaScript(jsString2, completionHandler: nil)
+        print("checkArchivedChatOpen")
+        self.setView(state: self.state)
+
+    }
+    
+    
     func addUserMediaListener(_ webView: WKWebView) {
         // For experimental microphone support
         let jsString = """
@@ -142,6 +173,7 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
             let i = result as! Int
             if(i > 0) {
                 self.bindNewChatButton(webView)
+                self.addMenuButtonListener(webView)
             } else {
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                     self.checkHeaderLoaded(webView)
@@ -151,6 +183,31 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
         print("checkHeaderLoaded")
     }
 
+    func addMenuButtonListener(_ webView: WKWebView){
+            let jsString2 = """
+                           document
+                             .querySelectorAll(
+                               "#side > header > div._1eNef > div > span > div:nth-child(3) > div > span"
+                             )[0]
+                             .addEventListener("click", (e) => {
+                               console.log("menu click");
+                               setTimeout(() => {
+                                 document
+                                   .querySelector(
+                                     "#side > header > div._1eNef > div > span > div._2wfYK.lpKIg > span > div > ul > li:nth-child(4)"
+                                   )
+                                   .addEventListener("click", (e) => {
+                                     console.log("archived click");
+                                     setTimeout(() => {
+                                        webkit.messageHandlers.state.postMessage("action:archivedOpen");
+                                     }, 100);
+                                   });
+                               }, 300);
+                             });
+                           """
+            webView.evaluateJavaScript(jsString2, completionHandler: nil)
+            print("checkChatOpen")
+    }
     func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
         self.wkView = webView
         //   addUserMediaListener(webView)
@@ -172,8 +229,10 @@ class WKController: NSObject, WKNavigationDelegate, UIScrollViewDelegate, UIDrop
                 }
             }
             if(body == "action:newChatOpen") {
-                print("action:newChatOpen")
                 self.checkChatOpen(self.wkView!)
+            }
+            if(body == "action:archivedOpen") {
+                self.checkArchivedChatOpen(self.wkView!)
             }
         default:
             print(message.name)
